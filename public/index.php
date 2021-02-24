@@ -50,7 +50,8 @@ error_reporting(E_ALL);
  */
 
 // Set the full path to the docroot
-define('DOCROOT', dirname(__DIR__).DIRECTORY_SEPARATOR);
+if ( ! defined('DOCROOT'))
+	define('DOCROOT', dirname(__DIR__).DIRECTORY_SEPARATOR);
 
 // Make the application relative to the docroot, for symlink'd index.php
 if ( ! is_dir($application) && is_dir(DOCROOT.$application))
