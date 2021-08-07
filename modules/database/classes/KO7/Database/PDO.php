@@ -31,7 +31,7 @@ class KO7_Database_PDO extends Database {
 			return;
 
 		// Extract the connection parameters, adding required variabels
-		extract($this->_config['connection'] + [
+		extract(Arr::get($this->_config, 'connection', []) + [
 			'dsn'        => '',
 			'username'   => NULL,
 			'password'   => NULL,
