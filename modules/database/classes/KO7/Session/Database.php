@@ -14,7 +14,7 @@
  *
  * @package    KO7/Database
  * @category   Session
- * 
+ *
  * @copyright  (c) 2007-2016  Kohana Team
  * @copyright  (c) since 2016 Koseven Team
  * @license    https://koseven.dev/LICENSE
@@ -126,7 +126,7 @@ class KO7_Session_Database extends Session {
 		do
 		{
 			// Create a new session id
-			$id = str_replace('.', '-', uniqid(NULL, TRUE));
+			$id = str_replace('.', '-', uniqid('', TRUE));
 
 			// Get the the id from the database
 			$result = $query->execute($this->_db);
