@@ -357,19 +357,21 @@ class KO7_HTTP_Header extends ArrayObject {
 		{
 			parent::offsetSet($index, $newval);
 		}
-
-		$current_value = $this->offsetGet($index);
-
-		if (is_array($current_value))
-		{
-			$current_value[] = $newval;
-		}
 		else
 		{
-			$current_value = [$current_value, $newval];
-		}
+			$current_value = $this->offsetGet($index);
 
-		parent::offsetSet($index, $current_value);
+			if (is_array($current_value))
+			{
+				$current_value[] = $newval;
+			}
+			else
+			{
+				$current_value = [$current_value, $newval];
+			}
+	
+			parent::offsetSet($index, $current_value);
+		}
 	}
 
 	/**
